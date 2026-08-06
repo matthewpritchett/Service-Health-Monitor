@@ -10,7 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Service-Health.Checkers\Service-Health.Checkers.csproj" />
       <ProjectReference Include="..\Service-Health.Core\Service-Health.Core.csproj" />
-      <ProjectReference Include="..\Service-Health.InMemoryCheckResultStore\Service-Health.InMemoryCheckResultStore.csproj" />
+      <ProjectReference Include="..\Service-Health.InMemory\Service-Health.InMemory.csproj" />
       <ProjectReference Include="..\Service-Health.Web\Service-Health.Web.csproj" />
       <ProjectReference Include="..\Service-Health.YamlMonitorConfigurationSource\Service-Health.YamlMonitorConfigurationSource.csproj" />
     </ItemGroup>

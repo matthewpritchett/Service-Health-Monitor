@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Health.Monitoring",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Health.Web", "Service-Health.Web\Service-Health.Web.csproj", "{91D25CC8-C4D2-438D-A25E-140D951B8C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Health.InMemoryCheckResultStore", "Service-Health.InMemoryCheckResultStore\Service-Health.InMemoryCheckResultStore.csproj", "{78C179D7-EB0C-4035-A11F-CD37E09C184D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Health.InMemory", "Service-Health.InMemory\Service-Health.InMemory.csproj", "{78C179D7-EB0C-4035-A11F-CD37E09C184D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service-Health.YamlMonitorConfigurationSource", "Service-Health.YamlMonitorConfigurationSource\Service-Health.YamlMonitorConfigurationSource.csproj", "{09F89F46-16C1-4869-A88B-ACF3C85F2AA2}"
 EndProject

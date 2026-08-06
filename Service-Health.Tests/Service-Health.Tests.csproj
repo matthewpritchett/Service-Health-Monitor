@@ -24,6 +24,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Service-Health.Checkers\Service-Health.Checkers.csproj" />
+      <ProjectReference Include="..\Service-Health.InMemory\Service-Health.InMemory.csproj" />
     </ItemGroup>
 
 </Project>

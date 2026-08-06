@@ -1,7 +1,7 @@
 using Service_Health.Checkers;
 using Service_Health.Core;
 using Service_Health.Host;
-using Service_Health.InMemoryCheckResultStore;
+using Service_Health.InMemory;
 using Service_Health.YamlMonitorConfiguration;
 
 var builder = WebApplication.CreateBuilder(args);
