@@ -8,7 +8,22 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Service-Health.Checkers\Service-Health.Checkers.csproj" />
+      <ProjectReference Include="..\Service-Health.Core\Service-Health.Core.csproj" />
+      <ProjectReference Include="..\Service-Health.InMemoryCheckResultStore\Service-Health.InMemoryCheckResultStore.csproj" />
       <ProjectReference Include="..\Service-Health.Web\Service-Health.Web.csproj" />
+      <ProjectReference Include="..\Service-Health.YamlMonitorConfigurationSource\Service-Health.YamlMonitorConfigurationSource.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="servicemonitor.yaml" />
+      <Resource Include="servicemonitor.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

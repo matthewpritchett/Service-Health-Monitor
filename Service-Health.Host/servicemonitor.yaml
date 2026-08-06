@@ -1,0 +1,24 @@
+interval: "00:00:30"
+
+groups:
+  - name: Google
+    services:
+      - type: http
+        name: Google HTTP
+        url: https://google.com
+        expectedStatus: 200
+
+      - type: ping
+        name: Google Ping
+        host: google.com
+
+  - name: Bing
+    services:
+      - type: http
+        name: Bing HTTP
+        url: https://bing.com
+        expectedStatus: 300
+        
+      - type: ping
+        name: Bing Ping
+        host: bing.com
