@@ -34,6 +34,13 @@
                 <li>
                     @result.Timestamp.UtcDateTime.ToString("MMM dd, yyyy hh:mm:ss tt") UTC
 
+                    @if (result.ResponseTime is { } responseTime)
+                    {
+                        <span class="small info">
+                            (@($"{responseTime.TotalMilliseconds:N0} ms"))
+                        </span>
+                    }
+                    
                     @if (!string.IsNullOrWhiteSpace(result.Message))
                     {
                         <span class="small info">

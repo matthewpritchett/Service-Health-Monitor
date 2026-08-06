@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 using Service_Health.Core;
 using Service_Health.Core.Models;
 
@@ -16,11 +17,15 @@ public class HttpHealthChecker(
             groupName,
             service.Name,
             service.Url);
-
+        
+        var stopwatch = Stopwatch.StartNew();
+        
         try
         {
             using var response = await httpClient.GetAsync(service.Url);
-
+            
+            stopwatch.Stop();
+            
             var success = (int)response.StatusCode == service.ExpectedStatus;
 
             if (success)
@@ -49,11 +54,13 @@ public class HttpHealthChecker(
                 Timestamp = DateTimeOffset.UtcNow,
                 Message = success
                     ? null
-                    : $"Status code: {(int)response.StatusCode}, expected: {service.ExpectedStatus}"
+                    : $"Status code: {(int)response.StatusCode}, expected: {service.ExpectedStatus}",
+                ResponseTime = stopwatch.Elapsed
             };
         }
         catch (Exception ex)
         {
+            stopwatch.Stop();
             logger.LogError(
                 ex,
                 "HTTP check failed with exception for {Group}/{Service}",
@@ -66,7 +73,8 @@ public class HttpHealthChecker(
                 ServiceName = service.Name,
                 Success = false,
                 Timestamp = DateTimeOffset.UtcNow,
-                Message = ex.Message
+                Message = ex.Message,
+                ResponseTime = stopwatch.Elapsed
             };
         }
     }

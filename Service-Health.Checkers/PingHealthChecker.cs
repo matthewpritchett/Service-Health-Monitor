@@ -50,8 +50,11 @@ public class PingHealthChecker(
                 Success = success,
                 Timestamp = DateTimeOffset.UtcNow,
                 Message = success
-                    ? $"Ping: {reply.RoundtripTime}ms"
-                    : $"Ping failed: {reply.Status}"
+                    ? null
+                    : $"Ping failed: {reply.Status}",
+                ResponseTime = success
+                    ? TimeSpan.FromMilliseconds(reply.RoundtripTime)
+                    : null,
             };
         }
         catch (Exception ex)
@@ -68,7 +71,8 @@ public class PingHealthChecker(
                 ServiceName = service.Name,
                 Success = false,
                 Timestamp = DateTimeOffset.UtcNow,
-                Message = ex.Message
+                Message = ex.Message,
+                ResponseTime = null
             };
         }
     }

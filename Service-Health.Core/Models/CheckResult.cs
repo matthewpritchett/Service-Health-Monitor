@@ -13,4 +13,6 @@ public class CheckResult
     public bool Success { get; init; }
     
     public string? Message { get; init; }
+    
+    public TimeSpan? ResponseTime { get; init; }
 }
